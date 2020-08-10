@@ -1,4 +1,3 @@
-import math
 import re
 import requests
 import pandas as pd
@@ -105,24 +104,24 @@ def main():
                     data[m[0][0]] = [m[0][0],0,0,0,0]
 
                 if m[0][1] == '# Hosts':
-                    data[m[0][0]][1] = math.ceil(c[col].mean())
+                    data[m[0][0]][1] = round(c[col].mean())
                 elif m[0][1] == '# Containers':
-                    data[m[0][0]][2] = math.ceil(c[col].mean())
+                    data[m[0][0]][2] = round(c[col].mean())
                 elif m[0][1] == '# Custom Metrics':
-                    data[m[0][0]][3] = math.ceil(c[col].mean())
+                    data[m[0][0]][3] = round(c[col].mean())
                 elif m[0][1] == '# High Res Metrics':
-                    data[m[0][0]][4] = math.ceil(c[col].mean())
+                    data[m[0][0]][4] = round(c[col].mean())
         elif m is not None and len(m) == 0:
             total_match = single_pattern.findall(col)
             if total_match is not None and len(total_match) == 1:
                 if total_match[0] == 'Hosts':
-                    data['Total'][1] = math.ceil(c[col].mean())
+                    data['Total'][1] = round(c[col].mean())
                 elif total_match[0] == 'Containers':
-                    data['Total'][2] = math.ceil(c[col].mean())
+                    data['Total'][2] = round(c[col].mean())
                 elif total_match[0] == 'Custom Metrics':
-                    data['Total'][3] = math.ceil(c[col].mean())
+                    data['Total'][3] = round(c[col].mean())
                 elif total_match[0] == 'High Res Metrics':
-                    data['Total'][4] = math.ceil(c[col].mean())
+                    data['Total'][4] = round(c[col].mean())
 
     df = pd.DataFrame(data.values(), columns=['Customer','Hosts','Containers','Custom Metrics','High Res Metrics'])
     df.to_excel(FILENAME)
