@@ -78,8 +78,8 @@ def main():
 
     ## DEBUG STUFF
     # report_url = output['Monthly Host per Hour Reports'][0]['SHORTLIVED_URL']['URL']
-    # report_url = "/Users/aaronkirk/Development/accenture_report.txt"
-    # report_url = "/Users/aaronkirk/Desktop/cloudreach_report.txt"
+    # report_url = "/Users/amkirk/Development/report_report.txt"
+    # report_url = "/Users/amkirk/Desktop/report_report.txt"
 
     try:
         c = pd.read_csv(report_url, sep='\t', header=0)
