@@ -1,5 +1,5 @@
 # signalfx_billing_summary
-This script is for informational purposes only.
+This script is for informational purposes only. It leverages non-documented APIs that are subject to change.
 ## Usage
 ### virtualenv
 Create a virtualenv and install the required dependencies:
